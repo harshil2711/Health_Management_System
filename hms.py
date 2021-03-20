@@ -1,23 +1,26 @@
+# datetime module for current time and date
 import datetime
 
-
+# gettime() function for print current time and date.
 def gettime():
 
     return datetime.datetime.now()
 
 
-print('welcome to health management system')
+print('welcome to Health Management System')
 
+# Ask for lock and retrieve the information.
 try:
 
     decision = int(input('press 1 for lock the value and 2 for retrieve the value \n'))
-    name = int(input('press 1 for harshil 2 for yax 3 for kinjal \n'))
+    name = int(input('press 1 for Harshil 2 for Yax 3 for Kinjal \n'))
 
 except ValueError as v:
     print('check your value', v)
     exit()
 
-
+    
+# take() function for lock the information about food and exercise for three people.
 def take():
     if name == 1:
         try:
@@ -71,6 +74,7 @@ def take():
             print('please enter the valid input',p)
 
 
+# take() function for retrieve the information about food and exercise for three people.
 def retrieve():
 
     if name == 1:
@@ -118,10 +122,11 @@ def retrieve():
         except ValueError as c:
             print('please enter the valid input',c)
 
+            
+if __name__ == '__main__':
+    if decision == 1:
+        take()
 
-if decision == 1:
-    take()
-
-elif decision == 2:
-    retrieve()
+    elif decision == 2:
+        retrieve()
 
